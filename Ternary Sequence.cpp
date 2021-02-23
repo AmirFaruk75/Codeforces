@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int t,x1,y1,z1,x2,y2,z2,a,b,c,d,e,f,g,h,i,j,sum=0,cum=0;
+    cin>>t;
+    while(t--)
+    {
+        cin>>x1>>y1>>z1>>x2>>y2>>z2;
+        if(z1<=y2)
+        {
+            sum=sum+(z1*2);
+            y2=y2-z1;
+            z1=0;
+        }
+        else{
+            sum=sum+(2*y2);
+            z1=z1-y2;
+        }
+        a=x1+z1;
+        if(a>=z2)
+        {
+            cout<<sum<<endl;
+        }
+        else{
+            b=z2-a;
+            if(b>=y1)
+            {
+                cum=(cum+(y1*2))*(-1);
+            }
+            else{
+                cum=(cum+(b*2))*(-1);
+            }
+            cout<<sum+cum<<endl;
+        }
+        sum=0;cum=0;
+    }
+}

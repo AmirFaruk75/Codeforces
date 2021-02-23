@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    double a,c,e,d,f,g,h;
+    long long int b,x,n,i,p,v=0;
+    cin>>n;
+    while(n--)
+    {
+        cin>>x;
+        if(x==1)
+        {
+            cout<<"NO"<<endl;
+            continue;
+        }
+        if(x%2==0)
+        {
+            if(x==4)
+            {
+                cout<<"YES"<<endl;
+            }
+            else{
+                cout<<"NO"<<endl;
+            }
+        }
+        else{
+            a=sqrt(x);
+            b=a;
+            if(a!=b)
+            {
+                cout<<"NO"<<endl;
+            }
+            else{
+                p=sqrt(b);
+                for(i=2;i<=p;i++)
+                {
+                    if(b%i==0)
+                    {
+                        v++;
+                    }
+                }
+                if(v==0)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+            }
+        }
+        v=0;
+    }
+}

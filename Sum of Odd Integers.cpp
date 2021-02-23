@@ -1,0 +1,93 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,k,i,j,a,b=0,c,d,e,f,g,h;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>n>>k;
+        a=sqrt(n);
+        for(j=1;j<=a;j++)
+        {
+            if(n%j==0)
+            {
+                b++;
+            }
+        }
+        if(b==1)
+        {
+            if(k>1)
+            {
+                cout<<"NO"<<endl;
+                b=0;
+                continue;
+            }
+            else if(k==1)
+            {
+                cout<<"YES"<<endl;
+                b=0;
+                continue;
+            }
+        }
+
+
+
+        if(k>a)
+        {
+            cout<<"NO"<<endl;
+            b=0;
+            continue;
+        }
+        else{
+            if(n%2==0)
+            {
+                if(k%2!=0)
+                {
+                    cout<<"NO"<<endl;
+                    b=0;
+                    continue;
+                }
+                else{
+                    cout<<"YES"<<endl;
+                    b=0;
+                }
+            }
+            else{
+                if(k%2!=0)
+                {
+                    cout<<"YES"<<endl;
+                    b=0;
+                    continue;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                    b=0;
+                    continue;
+                }
+            }
+        }
+        if(n%2!=0)
+        {
+            if(k%2==0)
+            {
+                cout<<"NO"<<endl;
+                b=0;
+                continue;
+            }
+            else{
+                cout<<"YES"<<endl;
+                b=0;
+                continue;
+            }
+        }
+        else{
+            if(k%2!=0)
+            {
+                cout<<"NO"<<endl;
+                b=0;
+                continue;
+            }
+        }
+    }
+}

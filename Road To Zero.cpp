@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,x,y,a,b,c,d,e,f,i,j,g,h;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>x>>y>>a>>b;
+        c=(x+y)*a;
+        d=b-x;
+        if(d<0)
+        {
+            d=d*(-1);
+        }
+        e=b-y;
+        if(e<0)
+        {
+            e=e*(-1);
+        }
+        if(d<=e)
+        {
+            f=b-d;
+            if(f<0)
+            {
+                f=f*(-1);
+            }
+            b=b*f;
+        }
+        else{
+            f=b-e;
+            if(f<0)
+            {
+                f=f*(-1);
+            }
+            b=b*f;
+        }
+        g=d+e;
+        h=a*g;
+        j=h+b;
+        if(c<=j)
+        {
+            cout<<c<<endl;
+        }
+        else{
+            cout<<j;
+        }
+    }
+
+}

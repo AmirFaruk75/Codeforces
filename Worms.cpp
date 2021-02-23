@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,a[100000],m,q[100000],begin,end,mid,sum=0,c=0,i,j;
+    cin>>n;
+    for(i=1;i<=n;i++)
+    {
+        cin>>a[i];
+        sum=sum+a[i];
+        a[i]=sum;
+    }
+    sort(a+1,a+n+1);
+    begin=1;
+    end=n;
+    cin>>m;
+    for(j=1;j<=m;j++)
+    {
+        cin>>q[j];
+        i=n;
+        while(begin<=end)
+        {
+            mid=(begin+end)/2;
+            if(a[mid]>=q[j])
+            {
+                i=mid;
+                c=1;
+                end=mid-1;
+            }
+            else{
+                begin=mid+1;
+            }
+        }
+        if(c==1)
+        {
+            cout<<i<<endl;
+        }
+        else{
+            cout<<n<<endl;
+        }
+        begin=1;
+        end=n;
+    }
+}
